@@ -109,7 +109,7 @@ let default = make // you have to export make as default for route files
 ## Actions
 To create an action you can use `Remix.MakeAction`.
 
-```
+```remix
 module ActionData = {
   type t
   type context = Env.context
