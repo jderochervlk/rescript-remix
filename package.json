@@ -1,0 +1,22 @@
+{
+  "name": "@jvlk/rescript-remix",
+  "version": "1.0.0",
+  "scripts": {
+    "res:build": "rescript",
+    "res:clean": "rescript clean",
+    "res:dev": "rescript -w"
+  },
+  "keywords": [
+    "rescript",
+    "remix",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@rescript/core": "^0.6.0",
+    "@rescript/react": "^0.12.0",
+    "rescript": "^11.1.0-rc.1",
+    "rescript-webapi": "^0.9.1"
+  }
+}
