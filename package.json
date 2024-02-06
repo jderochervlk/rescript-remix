@@ -11,8 +11,9 @@
     "remix",
     "react"
   ],
-  "author": "",
+  "author": "josh@vlkpack.com",
   "license": "MIT",
+  "homepage": "https://github.com/jderochervlk/rescript-remix",
   "dependencies": {
     "@rescript/core": "^0.6.0",
     "@rescript/react": "^0.12.0",
