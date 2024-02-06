@@ -67,3 +67,20 @@ let make = () => {
 
 let default = make // you have to export make as default for route files
 ```
+
+## Actions
+To create an action you can use `Remix.MakeAction`.
+
+```
+module ActionData = {
+  type t
+  type context = Env.context
+}
+
+module Action = Remix.MakeAction(ActionData)
+
+let action: Action.t = async ({context, request}) => {
+    /** */
+    Js.null // actions expect you to return a value or null
+}
+```
