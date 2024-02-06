@@ -1,10 +1,50 @@
 module Scripts = {
-  @module("@remix-run/react") @react.component
+  /** 
+   This component renders the client runtime of your app. You should render it inside the `<body>` of your HTML, usually in app/root.tsx.
+  ```rescript
+    // app/root.res
+    @react.component
+    let make = () {
+      <html>
+        <head />
+        <body>
+          <Remix.Scripts />
+        </body>
+      </html>
+    }
+
+    let default = make
+  ```
+   If you don't render the `<Scripts/>` component, your app will still work like a traditional web app without JavaScript, relying solely on HTML and browser behaviors.
+   https://remix.run/docs/en/main/components/scripts 
+   */
+  @module("@remix-run/react")
+  @react.component
   external make: unit => React.element = "Scripts"
 }
 
 module Links = {
-  @module("@remix-run/react") @react.component
+  /** 
+   The `<Links/>` component renders all of the `<link>` tags created by your route module links export. You should render it inside the `<head>` of your HTML, usually in app/root.tsx.
+   
+   ```rescript
+  // app/root.res
+  @react.component
+  let make = () => {
+      <html>
+        <head>
+          <Remix.Links />
+        </head>
+        <body></body>
+      </html>
+  }
+  
+  let default = make
+   ```
+   https://remix.run/docs/en/main/components/links 
+   */
+  @module("@remix-run/react")
+  @react.component
   external make: unit => React.element = "Links"
 
   type link = | @unboxed Href({rel: string, href: string})
