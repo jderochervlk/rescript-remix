@@ -11,6 +11,8 @@ var Meta = {};
 
 var Outlet = {};
 
+var ScrollRestoration = {};
+
 var $$Headers = {};
 
 var Loader = {};
@@ -23,15 +25,19 @@ function MakeAction(Data) {
   return {};
 }
 
+var Link = {};
+
 export {
   Scripts ,
   Links ,
   LiveReload ,
   Meta ,
   Outlet ,
+  ScrollRestoration ,
   $$Headers ,
   Loader ,
   MakeLoader ,
   MakeAction ,
+  Link ,
 }
 /* No side effect */

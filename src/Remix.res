@@ -74,6 +74,11 @@ module Outlet = {
   external make: unit => React.element = "Outlet"
 }
 
+module ScrollRestoration = {
+  @module("@remix-run/react") @react.component
+  external make: unit => React.element = "ScrollRestoration"
+}
+
 module Headers = {
   type actionHeaders
   type errorHeaders
@@ -125,4 +130,16 @@ module type ActionData = {
 module MakeAction = (Data: ActionData) => {
   type actionArgs = {context: Data.context, request: Webapi.Fetch.Request.t}
   type t = actionArgs => promise<Js.Nullable.t<Data.t>>
+}
+
+module Link = {
+  type prefetch =
+    | @as("none") None
+    | @as("intent") Intent
+    | @as("render") Render
+    | @as("viewport") Viewport
+
+  @module("@remix-run/react") @react.component
+  external make: (~prefetch: prefetch=?, ~to: string, ~children: React.element=?) => React.element =
+    "Link"
 }
