@@ -28,6 +28,44 @@ export default {
     ignoredRouteFiles: ["**/.*", "**/*.res", "**/*.resi"],
 }
 ```
+## `root.js`
+You can add types to Remix's links and meta functions
+```rescript
+@module("./style.css")
+external styles: string = "default"
+
+let links: Remix.Links.t = () => [Remix.Links.Href({rel: "stylesheet", href: styles})]
+
+let meta: Remix.Meta.t = () => [
+  Remix.Meta.Content({name: "viewport", content: "width=device-width, initial-scale=1"}),
+  Remix.Meta.Title({title: "My site"}),
+  Remix.Meta.Content({
+    name: "description",
+    content: "a website",
+  }),
+  Remix.Meta.Charset({charset: "UTF-8"}),
+]
+
+@react.component
+let make = () => {
+  <html lang="en">
+    <head>
+      <link rel="icon" href="data:image/x-icon;base64,AA" />
+      <Remix.Meta />
+      <Remix.Links />
+    </head>
+    <body>
+      <main>
+        <Remix.Outlet />
+      </main>
+      <Remix.Scripts />
+      <Remix.LiveReload />
+    </body>
+  </html>
+}
+
+let default = make
+```
 
 ## Loader
 To create a typed [loader](https://remix.run/docs/en/main/route/loader) you can use `Remix.MakeLoader` higher order module (functor). This will create a type for a loader as well as a typed `useLoaderData` hook that has a typed response.
